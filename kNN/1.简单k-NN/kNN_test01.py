@@ -45,6 +45,7 @@ def classify0(inx, dataset, labels, k):
 	#对上述结果沿着第二个轴（即列）进行求和，得到一个一维数组
 	# k个最近的标签
 	k_labels = [labels[index] for index in dist.argsort()[0 : k]]
+	#.argsort()函数返回数组从小到大排序的索引值，所以.argsort()[0 : k]表示返回数组中前k个最小值的索引。
 	# 出现次数最多的标签即为最终类别
 	label = collections.Counter(k_labels).most_common(1)[0][0]
 	return label
