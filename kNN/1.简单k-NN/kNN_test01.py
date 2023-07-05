@@ -48,6 +48,8 @@ def classify0(inx, dataset, labels, k):
 	#.argsort()函数返回数组从小到大排序的索引值，所以.argsort()[0 : k]表示返回数组中前k个最小值的索引。
 	# 出现次数最多的标签即为最终类别
 	label = collections.Counter(k_labels).most_common(1)[0][0]
+	#.Counter(k_labels)创建一个计数器对象，统计k_labels中各个元素的出现次数。
+	#.most_common(1)返回出现次数最多的元素及其出现次数，以列表的形式返回。所以.most_common(1)[0][0]表示返回出现次数最多的元素。
 	return label
 
 if __name__ == '__main__':
